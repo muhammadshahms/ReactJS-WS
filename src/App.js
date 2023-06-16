@@ -1,12 +1,15 @@
-import styles from "./App.module.css";
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './header'
+import Home from './home'
 
-function App() {
+export const App = () => {
   return (
-  <div>
-    <h1 className={styles.App}>Hello World</h1>
-  </div>
-
-)}
-
-
-export default App;
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>} ></Route>
+      <Route path='header' element={<Header/>} ></Route>
+</Routes>
+</BrowserRouter>
+  )
+}
